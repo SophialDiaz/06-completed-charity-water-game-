@@ -1,23 +1,52 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
-  <title>Water Quest</title>
-  <link href="style.css" rel="stylesheet" type="text/css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Water Quest - charity: water Game</title>
+  
+  <!-- Montserrat font for brand alignment -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
+
+  <link href="style.css" rel="stylesheet" />
 </head>
 <body>
   <div class="container">
     <h1>Water Quest</h1>
-    <p class="game-instructions">Collect 20 items to complete the game!</p>
+    <p class="game-instructions">Collect the water cans before time runs out!</p>
+
+    <div class="difficulty">
+      <label for="difficulty">Select Difficulty: </label>
+      <select id="difficulty" name="difficulty">
+        <option value="easy">Easy (15 cans, 40s)</option>
+        <option value="normal" selected>Normal (25 cans, 30s)</option>
+        <option value="hard">Hard (35 cans, 20s)</option>
+      </select>
+    </div>
+
     <div class="stats">
       <p>Cans Collected: <span id="current-cans">0</span></p>
       <p>Time Left: <span id="timer">30</span>s</p>
     </div>
-    <div id="achievements" class="achievement"></div>
+
     <div class="game-grid"></div>
+
+    <div id="achievements" class="achievement"></div>
+
     <button id="start-game">Start Game</button>
   </div>
+
+  <!-- Sound effect -->
+  <audio id="click-sound" src="click-sound.mp3" preload="auto"></audio>
+
+  <footer>
+    <p>
+      Support <a href="https://www.charitywater.org" target="_blank" rel="noopener noreferrer">charity: water</a> and help bring clean water to everyone.
+      <br />
+      <a href="https://www.charitywater.org/donate" target="_blank" rel="noopener noreferrer">Donate here</a>
+    </p>
+  </footer>
+
   <script src="script.js"></script>
 </body>
 </html>
